@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaushal Neupane</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>My Portfolio</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+       
+    </style>
 </head>
-<body style="font-family: 'Montserrat';" >
+<body>
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
@@ -54,8 +58,8 @@
         </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section class="experience" id="experience">
+     <!-- Work Experience Section -->
+     <section class="experience" id="experience">
         <div class="container">
             <h2 class="fade-in">Work Experience</h2>
             <div class="timeline">
@@ -164,20 +168,33 @@
                 </div>
                 <div class="contact-form fade-in">
                     <h3>Send Me a Message</h3>
+                    <!-- Status messages -->
+                    <div id="form-status-success" class="form-status success">
+                        Your message has been sent successfully! I'll get back to you soon.
+                    </div>
+                    <div id="form-status-error" class="form-status error">
+                        Sorry, there was a problem sending your message. Please try again.
+                    </div>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Your Name" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" id="from_email" name="from_email" placeholder="Your Email" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject" >
+                            <input type="tel" id="mobileNumber" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="form-control" id="from_number" name="from_number" placeholder="Your Mobile Number" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" placeholder="Your Message" ></textarea>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" ></textarea>
+                        </div>
+                        <div class="submit-wrapper">
+                            <button type="submit" class="btn" id="submit-btn">Send Message</button>
+                            <div class="spinner" id="loading-spinner"></div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -189,18 +206,17 @@
         <div class="container">
             <div class="social-links">
                 <a href="https://www.facebook.com/kaushalneupane.kaushalneupane" target="_blank" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://wa.me/+9779706868723" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-skype"></i></a>
-<!--              
+                            <a href="https://wa.me/+9779706868723" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-skype"></i></a>
             </div>
-            <p>&copy; 2025 Kaushal Neupane. All Rights Reserved.</p>
+            <p>&copy; Kaushal Neupane | Designed by <a href="https://nischalneupane061.com.np/" target="_blank" style="text-decoration: none; color: white;">Nischal Neupane</a>.</p>
         </div>
     </footer>
- -->
+
     <!-- JavaScript -->
     <script src="assets/js/main.js">
-       
+     
     </script>
 </body>
 </html>
