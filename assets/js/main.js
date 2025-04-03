@@ -4,7 +4,7 @@
     emailjs.init("kmqiwwkwS9FR0830B");
 })();
 
-// Mobile Navigation Toggle
+
 const mobileToggle = document.getElementById('mobile-toggle');
 const navMenu = document.getElementById('nav-menu');
 
@@ -12,7 +12,6 @@ mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Hide mobile menu when clicking on a nav link
 const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -62,9 +61,7 @@ contactForm.addEventListener('submit', function(e) {
     successMessage.style.display = 'none';
     errorMessage.style.display = 'none';
 
-    // Send email using EmailJS
-    // Replace with your actual EmailJS service ID and template ID
-    //emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    
     emailjs.sendForm("service_s408yao","template_w8qap17",this)
         .then(function() {
             // Hide spinner
@@ -117,24 +114,23 @@ function typeEffect() {
     const currentProfession = professions[professionIndex];
     
     if (isDeleting) {
-        // Remove a character
+       
         professionElement.textContent = currentProfession.substring(0, charIndex - 1);
         charIndex--;
         typingDelay = 50;
     } else {
-        // Add a character
+       
         professionElement.textContent = currentProfession.substring(0, charIndex + 1);
         charIndex++;
         typingDelay = 150;
     }
     
-    // If word is complete, start deleting after a pause
+   
     if (!isDeleting && charIndex === currentProfession.length) {
         isDeleting = true;
         typingDelay = 1500; // Pause before deleting
     } 
     
-    // If word is deleted, move to next word
     else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         professionIndex = (professionIndex + 1) % professions.length;
@@ -144,5 +140,4 @@ function typeEffect() {
     setTimeout(typeEffect, typingDelay);
 }
 
-// Start the typing effect
 setTimeout(typeEffect, 1000);
